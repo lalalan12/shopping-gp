@@ -1,0 +1,48 @@
+*{
+  padding: 0px;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+#app {
+ width: 1500px;
+ height: 620px;
+}
+
+#app .left {
+  float: left;
+}
+#app .menu {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 200px;
+}
+
+#app .left .el-menu-vertical-demo {
+  width: 200px;
+  height: 712px;
+}
+
+#app .right {
+  float: left;
+}
+
+#app .content {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 200px;
+  overflow: auto;
+  background-color: #eae8eb;
+}
+
+#app a {
+  color: #fff;
+}
+
+#app a:hover {
+  color: #ffd04b;
+}

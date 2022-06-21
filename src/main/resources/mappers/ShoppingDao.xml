@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lanwz.web.dao.ShoppingDao">
+
+    <select id="getShopping" resultType="com.lanwz.web.pojo.Shopping" parameterType="Integer">
+        select * from t_product where `tid`=#{tid}
+    </select>
+
+    <select id="searchShopping" resultType="com.lanwz.web.pojo.Shopping" parameterType="String">
+        select * from t_product where `description` like CONCAT('%',#{search},'%') or `pname` like CONCAT('%',#{search},'%')
+    </select>
+
+    <select id="allShopping" resultType="com.lanwz.web.pojo.Shopping">
+        select * from t_product
+    </select>
+
+    <update id="updateShopping">
+        update t_product set `num`=`num`-#{num} where `pid`=#{pid}
+    </update>
+
+    <delete id="deleteShopping">
+        delete from t_product where `pid`=#{pid}
+    </delete>
+
+    <update id="updateShoppingAdmin">
+        update t_product set `pname`=#{pname},`price`=#{price},`num`=#{num},`image`=#{image},`tid`=#{tid},`description`=#{description} where `pid`=#{pid}
+    </update>
+
+    <insert id="addShopping">
+        insert into t_product(`pname`,`price`,`image`,`description`,`num`,`tid`) values (#{pname},#{price},#{image},#{description},#{num},#{tid})
+    </insert>
+
+</mapper>

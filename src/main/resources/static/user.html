@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网上服装销售系统-用户信息</title>
+  <link rel="shottchut icon" type="image/icon" href="image/logo.png">
+  <link rel="stylesheet" href="vue/index.css">
+  <link rel="stylesheet" href="css/indexCommon.css">
+  <link rel="stylesheet" href="css/user.css">
+  <script src="vue/vue.js"></script>
+  <script src="vue/index.js"></script>
+  <script src="vue/axios.min.js"></script>
+  <script src="js/user.js"></script>
+</head>
+
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">
+        <img src="image/logo.png" alt="">Shopping
+      </div>
+      <div class="search">
+        <input type="search" placeholder="商品名称/类型" v-model="searchdata">
+        <button @click="searchSubmit()">搜索</button>
+      </div>
+    </header>
+    <div id="app">
+      <div class="nav">
+        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
+          <el-menu-item index="1"><a href="index.html">上衣</a></el-menu-item>
+          <el-menu-item index="2"><a href="pant.html">下裤</a></el-menu-item>
+          <el-menu-item index="3"><a href="shoe.html">鞋子</a></el-menu-item>
+          <el-menu-item index="4"><a href="skirt.html">裙子</a></el-menu-item>
+          <el-menu-item index="5"><a href="user.html">用户信息</a></el-menu-item>
+          <el-menu-item index="6"><a href="order.html">订单信息</a></el-menu-item>
+          <el-menu-item index="7"><a href="car.html">购物车</a></el-menu-item>
+        </el-menu>
+      </div>
+      <div class="main">
+        <el-form status-icon :model="user" ref="registerForm" label-width="100px">
+          <el-form-item label="用户名：">
+            <label>{{user.username}}</label>
+          </el-form-item>
+          <el-form-item label="手机号：">
+            <label>{{user.tel}}</label>
+          </el-form-item>
+          <el-form-item label="真实姓名：">
+            <label>{{user.name}}</label>
+          </el-form-item>
+          <el-form-item label="地址：">
+            <label>{{user.address}}</label>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="changeUser()">修改</el-button>
+            <el-button type="primary" @click="exitUser()">退出登录</el-button>
+          </el-form-item>
+        </el-form>
+      </div>
+    </div>
+  </div>
+  <footer>Copyright&copy;2022 lalalan All Right Reserved</footer>
+</body>
+
+</html>

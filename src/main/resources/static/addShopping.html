@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网上服装销售系统-后台管理</title>
+  <link rel="shottchut icon" type="image/icon" href="image/logo.png">
+  <link rel="stylesheet" href="vue/index.css">
+  <link rel="stylesheet" href="css/adminCommon.css">
+  <link rel="stylesheet" href="css/addShopping.css">
+  <script src="vue/vue.js"></script>
+  <script src="vue/index.js"></script>
+  <script src="vue/axios.min.js"></script>
+  <script src="js/addShopping.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="left menu">
+          <el-menu default-active="2-2" class="el-menu-vertical-demo" active-text-color="#ffd04b"
+            background-color="#545c64" text-color="#fff">
+            <a href="admin.html">
+              <el-menu-item index="1">
+                <i class="el-icon-user"></i>
+                <span slot="title">用户管理</span>
+              </el-menu-item>
+            </a>
+            <el-submenu index="2">
+              <template slot="title">
+                <i class="el-icon-shopping-bag-2"></i>
+                <span>商品管理</span>
+              </template>
+              <el-menu-item-group>
+                <a href="shoppingManage.html">
+                  <el-menu-item index="2-1">商品查询</el-menu-item>
+                </a>
+                <a href="addShopping.html">
+                  <el-menu-item index="2-2">添加商品</el-menu-item>
+                </a>
+              </el-menu-item-group>
+            </el-submenu>
+            <a href="orderManage.html">
+              <el-menu-item index="3">
+                <i class="el-icon-menu"></i>
+                <span slot="title">订单管理</span>
+              </el-menu-item>
+            </a>
+            <a href="login.html">
+            <el-menu-item index="4">
+              <i class="el-icon-switch-button"></i>
+              <span slot="title">退出登录</span>
+            </el-menu-item>
+            </a>
+          </el-menu>
+    </div>
+    <div class="right content">
+      <h3>添加商品信息</h3>
+      <div class="bottom">
+        <el-form status-icon :model="shopping" :rules="rules" ref="shoppingForm" label-width="100px" style="width: 800px;float: left;">
+          <el-form-item label="商品名称" prop="pname">
+            <el-input placeholder="请输入商品名称" v-model="shopping.pname"></el-input>
+          </el-form-item>
+          <el-form-item label="商品单价" prop="price">
+            <el-input placeholder="请输入商品单价" v-model="shopping.price"></el-input>
+          </el-form-item>
+          <el-form-item label="商品图片" prop="image">
+            <form target="frameName" action="http://localhost:85/api/shopping/uploadFile"
+              enctype="multipart/form-data" method="post">
+              <input type="file" name="file">
+              <input type="submit" value="提交" @click="submitImage">
+            </form>
+            <iframe src="" frameborder="0" name="frameName" id="frameName" ref="iframe"></iframe>
+          </el-form-item>
+          <el-form-item label="商品描述" prop="description">
+            <el-input placeholder="请输入商品描述" v-model="shopping.description"></el-input>
+          </el-form-item>
+          <el-form-item label="商品数量" prop="num">
+            <el-input placeholder="请输入商品数量" v-model="shopping.num"></el-input>
+          </el-form-item>
+          <el-form-item label="商品类型" prop="tid">
+            <el-select v-model="value" placeholder="请选择">
+              <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+              </el-option>
+            </el-select>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" style="width: 200px;" @click="addShopping">添 加
+            </el-button>
+            <el-button type="primary" style="width: 200px;" @click="resetShopping">重 置
+            </el-button>
+          </el-form-item>
+        </el-form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

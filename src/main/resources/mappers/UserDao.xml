@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lanwz.web.dao.UserDao">
+
+    <select id="findByUsername" resultType="com.lanwz.web.pojo.User" parameterType="String">
+        select * from t_user where `username`=#{username}
+    </select>
+
+    <insert id="userSave" parameterType="com.lanwz.web.pojo.User">
+        insert into t_user (`username`,`password`,`name`,`address`,`tel`) values (#{username},#{password},#{name},#{address},#{tel})
+    </insert>
+
+
+    <update id="userChange" parameterType="com.lanwz.web.pojo.User">
+        update t_user set `username`=#{username},`password`=#{password},`name`=#{name},`address`=#{address},`tel`=#{tel} where `username`=#{username}
+    </update>
+
+    <select id="allUser" resultType="com.lanwz.web.pojo.User">
+        select * from t_user
+    </select>
+
+    <delete id="deleteUser">
+        delete from t_user where `username`=#{username}
+    </delete>
+
+</mapper>

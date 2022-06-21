@@ -1,0 +1,42 @@
+body {
+  background: url("../image/login.jpg") no-repeat center 80px;
+}
+
+header {
+  width: 1000px;
+  height: 90px;
+  margin: 0 auto;
+  font-size: 30px;
+  font-family: "Vipp Neue", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  text-shadow: 1px 2px 1px rgb(226, 37, 37);
+}
+
+
+header img {
+  width: 75px;
+  margin-left: 100px;
+  vertical-align: middle;
+}
+
+#app {
+  margin-left: 60%;
+  margin-top: 70px;
+  width: 400px;
+  padding: 20px;
+  background-color: #e9e9f2;
+  border-radius: 10px;
+}
+
+#app h3 {
+  text-align: center;
+}
+
+footer {
+  margin-top: 100px;
+  margin-bottom: 3px;
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+}

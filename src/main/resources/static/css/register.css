@@ -1,0 +1,36 @@
+
+
+header {
+  width: 1000px;
+  height: 90px;
+  margin: 0 auto;
+  font-size: 30px;
+  font-family: "Vipp Neue", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  text-shadow: 1px 2px 1px rgb(226, 37, 37);
+}
+
+header img {
+  width: 75px;
+  margin-left: 100px;
+  vertical-align: middle;
+}
+
+#app {
+  margin: 0 auto;
+  width: 500px;
+}
+
+#app h3 {
+  text-align: center;
+}
+
+footer {
+  margin-top: 30px;
+  margin-bottom: 3px;
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+}
+

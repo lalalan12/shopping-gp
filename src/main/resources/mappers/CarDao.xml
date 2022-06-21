@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lanwz.web.dao.CarDao">
+
+    <select id="getCar" resultType="com.lanwz.web.pojo.Car" parameterType="String">
+        select * from t_car where `username`=#{username}
+    </select>
+
+    <select id="byPidCar" resultType="com.lanwz.web.pojo.Car">
+        select * from t_car where `username`=#{username} and `pid`=#{pid}
+    </select>
+
+    <insert id="saveCar" parameterType="com.lanwz.web.pojo.Car">
+        insert into t_car(`pid`,`pname`,`price`,`num`,`allprice`,`username`,`image`,`description`,`checked`) values (#{pid},#{pname},#{price},#{num},#{allprice},#{username},#{image},#{description},#{checked})
+    </insert>
+
+    <update id="updateCar">
+        update t_car set `num`=#{num},`allprice`=#{allprice},`checked`=#{checked} where `username`=#{username} and `pid`=#{pid}
+    </update>
+
+    <delete id="deleteCar">
+        delete from t_car where `pid`=#{pid} and `username`=#{username}
+    </delete>
+
+</mapper>

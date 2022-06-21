@@ -1,0 +1,20 @@
+.content h3 {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.content .bottom {
+  background-color: #fff;
+  margin: 10px;
+  padding: 40px 15px;
+  height: 500px;
+}
+
+#frameName{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  visibility: hidden;
+}
+
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lanwz.web.dao.OrderDao">
+    <insert id="saveOrder">
+        insert into t_order(`pid`,`pname`,`price`,`num`,`allprice`,`dates`,`state`,`username`,`description`,`image`,`address`,`name`,`tel`) values (#{pid},#{pname},#{price},#{num},#{allprice},now(),'未发货',#{username},#{description},#{image},#{address},#{name},#{tel})
+    </insert>
+
+    <select id="getOrder" resultType="com.lanwz.web.pojo.Order" parameterType="String">
+        select * from t_order where `username` = #{username}
+    </select>
+
+    <delete id="deleteOrder">
+        delete from t_order where `oid`=#{oid}
+    </delete>
+
+    <select id="allOrder" resultType="com.lanwz.web.pojo.Order">
+        select * from t_order
+    </select>
+
+    <update id="orderState">
+        update t_order set `state`=#{state} where `oid`=#{oid}
+    </update>
+
+
+
+</mapper>

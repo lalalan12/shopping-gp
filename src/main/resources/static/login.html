@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网上服装销售系统-用户登录</title>
+  <link rel="shottchut icon" type="image/icon" href="image/logo.png">
+  <link rel="stylesheet" href="vue/index.css">
+  <link rel="stylesheet" href="css/login.css">
+  <script src="vue/vue.js"></script>
+  <script src="vue/index.js"></script>
+  <script src="vue/axios.min.js"></script>
+  <script src="js/login.js"></script>
+</head>
+<body>
+  <header>
+    <img src="image/logo.png" alt="">Shopping
+  </header>
+  <div id="app">
+    <h3>用户登录</h3>
+    <el-form status-icon :model="user" :rules="rules" ref="registerForm"  label-width="70px">
+      <el-form-item label="用户名" prop="username">
+        <el-input type="username" placeholder="请输入用户名" v-model="user.username"></el-input>
+      </el-form-item>
+      <el-form-item label="密码" prop="password">
+        <el-input type="password" placeholder="密码由5-20位字母，数字和符号组成" v-model="user.password"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-checkbox v-model="user.checked">管理用户</el-checkbox>
+      </el-form-item>
+      <el-button @click="register('registerForm')" type="warning" style="width: 100%;">登录</el-button>
+      <el-form-item>
+        <p style="color: black">还没有账号？<el-link href="register.html" type="primary" :underline="false">免费注册
+          </el-link>
+        </p>
+      </el-form-item>
+    </el-form>
+  </div>
+  <footer>Copyright&copy;2022 lalalan All Right Reserved</footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+.main {
+  width: 1000px;
+}
+
+.main_item {
+  width: 860px;
+  height: 140px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #eae8eb;
+  margin: 10px auto;
+}
+
+
+.main_item .center {
+  float: left;
+  margin: 5px 15px;
+}
+
+.main_item .center img {
+  width: 100px;
+  border-radius: 8px;
+}
+
+.main_item .right {
+  position: relative;
+  float: left;
+  margin-top: 5px;
+}
+
+.main_item .right .desc {
+  position: relative;
+  float: left;
+  width: 250px;
+  font-size: 13px;
+  margin-right: 70px;
+  white-space: normal;
+}
+
+.main_item .right .price {
+  font-weight: 700;
+  margin-right: 100px;
+}
+
+.main_item .right .allprice {
+  font-weight: 700;
+  color: red;
+  margin-left: 100px;
+}
+
+.main_item .right .delete {
+  font-size: 14px;
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  color: #888;
+}
+
+.main_item .right .state {
+  position: absolute;
+  bottom: -25px;
+  left: 0px;
+  font-size: 13px;
+  color: #f3a862;
+}
+
+.main_item .right .delete:hover {
+  color: #000;
+}
+
+.noMessage {
+  position: absolute;
+  top: 130px;
+  left: 430px;
+  color: #909399;
+  visibility: hidden;
+}
+
+#app .visibleMessage {
+  visibility: visible;
+}
